@@ -23,7 +23,8 @@ const items = [
 const AppHeader = () => {
 
   const size = useContext(ResponsiveContext);
-  const [focused, setFocused] = useState(false);
+  const [focused] = useState(false);
+  //const [focused, setFocused] = useState(false);
 
   return (
     <Header fill="horizontal" pad={{ horizontal: 'medium' }} background="background-front">
