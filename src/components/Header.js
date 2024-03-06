@@ -20,6 +20,12 @@ const items = [
     tooltip: "Access global support Slack channel..." },
 ];
 
+<script>
+   function setLocation(url){
+        window.parent.location.href = url; 
+    }
+</script>
+
 const AppHeader = () => {
 
   const size = useContext(ResponsiveContext);
@@ -47,7 +53,10 @@ const AppHeader = () => {
         <Nav direction="row" gap="small">
           {items.map(item => (
             <Tip content={item.tooltip}>
-              <Button label={item.label} key={item.label} href={item.url} />
+              <Button label={item.label} 
+                      key={item.label} 
+                      onClick={() => { window.parent.location.href = {item.url} }}/>
+
             </Tip>  
           ))}
         </Nav>
