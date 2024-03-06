@@ -1,6 +1,5 @@
-import React, { useContext, useEffect, useRef, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Box, Button, Header, Text, Menu, Nav, ResponsiveContext, Tip } from 'grommet';
-import { hpe } from 'grommet-theme-hpe';
 import { Hpe as HpeIcon } from 'grommet-icons';
 
 const items = [

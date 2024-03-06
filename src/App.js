@@ -1,7 +1,7 @@
 import { Grommet, Box } from 'grommet'
 import { hpe } from 'grommet-theme-hpe';
 import { Header } from './components';
-import React, { useState } from "react";
+import React from "react";
 
 function App() {
   return (
