@@ -16,15 +16,9 @@ const items = [
     tooltip: "Notify us of any issue..." 
   },  
   { label: 'Support Channel', 
-    url: "/",
+    url: "https://hpe.enterprise.slack.com/archives/C06L2GA4NP8",
     tooltip: "Access global support Slack channel..." },
 ];
-
-<script>
-   function setLocation(url){
-        window.parent.location.href = url; 
-    }
-</script>
 
 const AppHeader = () => {
 
@@ -55,13 +49,14 @@ const AppHeader = () => {
             <Tip content={item.tooltip}>
               <Button label={item.label} 
                       key={item.label} 
-                      onClick={() => { window.parent.location.href = {item.url} }}/>
+                      href={item.url}
+                      onClick={(href) => { window.parent.location.href = href }}/>
 
             </Tip>  
           ))}
         </Nav>
       ) : (
-        <Menu label="Menu" items={items} />
+        <Menu label="Menu" items={items} /> 
       )}
     </Header>
   );
