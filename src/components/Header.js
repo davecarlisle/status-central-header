@@ -8,15 +8,15 @@ function goNav(url) {
 
 const items = [
   { label: 'Home', 
-    onClick: () => { goNav('/') } ,
+    onClick: () => { goNav('https://hpetest01.statuspage.io/') } ,
     tooltip: 'Go to main status view...' 
   },
   { label: 'Incident History', 
-    onClick: () => { goNav('/history') } ,
+    onClick: () => { goNav('https://hpetest01.statuspage.io/history') } ,
     tooltip: "View complete incident history..." 
   },
   { label: 'Report Issue', 
-    onClick: () => { goNav('/') } ,
+    onClick: () => { goNav('https://hpetest01.statuspage.io/') } ,
     tooltip: 'Notify us of any issue...' 
   },  
   { label: 'Support Channel', 
