@@ -2,22 +2,27 @@ import React, { useContext, useState } from 'react';
 import { Box, Button, Header, Text, Menu, Nav, ResponsiveContext, Tip } from 'grommet';
 import { Hpe as HpeIcon } from 'grommet-icons';
 
+function goNav(url) {
+  window.parent.location.href = url;
+}
+
 const items = [
   { label: 'Home', 
-    url: "/", 
-    tooltip: "Go to main status view..." 
+    onClick: () => { goNav('/') } ,
+    tooltip: 'Go to main status view...' 
   },
   { label: 'Incident History', 
-    url: "/history", 
+    onClick: () => { goNav('/history') } ,
     tooltip: "View complete incident history..." 
   },
   { label: 'Report Issue', 
-    url: "/", 
-    tooltip: "Notify us of any issue..." 
+    onClick: () => { goNav('/') } ,
+    tooltip: 'Notify us of any issue...' 
   },  
   { label: 'Support Channel', 
-    url: "https://hpe.enterprise.slack.com/archives/C06L2GA4NP8",
-    tooltip: "Access global support Slack channel..." },
+    onClick: () => { goNav('https://hpe.enterprise.slack.com/archives/C06L2GA4NP8') } ,
+    tooltip: 'Access global support Slack channel...' 
+  },
 ];
 
 const AppHeader = () => {
@@ -26,10 +31,11 @@ const AppHeader = () => {
   const [focused] = useState(false);
   //const [focused, setFocused] = useState(false);
 
+
   return (
     <Header fill="horizontal" pad={{ horizontal: 'medium' }} background="background-front">
       <Tip content="Status Central home...">
-        <Button>
+        <Button onClick={() => { goNav("/"); }}>
           <Box direction="row" align="start" gap="medium" pad={{ vertical: 'small' }} responsive={false}>
             <Box height="24px" justify="center">
               <HpeIcon color="brand"/>
@@ -47,11 +53,9 @@ const AppHeader = () => {
         <Nav direction="row" gap="small">
           {items.map(item => (
             <Tip content={item.tooltip}>
-              <Button label={item.label} 
+              <Button label={item.label}
                       key={item.label} 
-                      href={item.url}
-                      onClick={(href) => { window.parent.location.href = href }}/>
-
+                      onClick={item.onClick}/>
             </Tip>  
           ))}
         </Nav>
