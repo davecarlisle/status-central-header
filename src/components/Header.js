@@ -42,7 +42,7 @@ const AppHeader = () => {
             </Box>
             {(!['xsmall', 'small'].includes(size) ||
               (['xsmall', 'small'].includes(size) && !focused)) && (
-              <Box wrap="false">
+              <Box direction="row" gap="xsmall" wrap>
                 <Text color="text-strong" weight="bold">HPE</Text>
                 <Text color="text-strong">Status Central</Text>
               </Box>
