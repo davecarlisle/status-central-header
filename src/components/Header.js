@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { Box, Button, Header, Text, Menu, Nav, ResponsiveContext, Tip } from 'grommet';
-import { Hpe as HpeIcon } from 'grommet-icons';
+import { Hpe as HpeIcon, Slack as SlackIcon } from 'grommet-icons';
 
 function goNav(url) {
   window.parent.location.href = url;
@@ -11,15 +11,16 @@ const items = [
     onClick: () => { goNav('/') } ,
     tooltip: 'Go to main status view...' 
   },
-  { label: 'Incident History', 
+  { label: 'History', 
     onClick: () => { goNav('/history') } ,
-    tooltip: "View complete incident history..." 
+    tooltip: "View complete history..." 
   },
   { label: 'Report Issue', 
     onClick: () => { goNav('/') } ,
     tooltip: 'Notify us of any issue...' 
   },  
-  { label: 'Support Channel', 
+  { 
+    icon: (<SlackIcon color="plain" size="large" />),
     onClick: () => { goNav('https://hpe.enterprise.slack.com/archives/C06L2GA4NP8') } ,
     tooltip: 'Access global support Slack channel...' 
   },
@@ -55,6 +56,7 @@ const AppHeader = () => {
           {items.map(item => (
             <Tip content={item.tooltip}>
               <Button label={item.label}
+                      icon={item.icon}
                       key={item.label} 
                       onClick={item.onClick}/>
             </Tip>  
