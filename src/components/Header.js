@@ -8,15 +8,15 @@ function goNav(url) {
 
 const items = [
   { label: 'Home', 
-    onClick: () => { goNav('https://hpetest01.statuspage.io/') } ,
+    onClick: () => { goNav('/') } ,
     tooltip: 'Go to main status view...' 
   },
   { label: 'Incident History', 
-    onClick: () => { goNav('https://hpetest01.statuspage.io/history') } ,
+    onClick: () => { goNav('/history') } ,
     tooltip: "View complete incident history..." 
   },
   { label: 'Report Issue', 
-    onClick: () => { goNav('https://hpetest01.statuspage.io/') } ,
+    onClick: () => { goNav('/') } ,
     tooltip: 'Notify us of any issue...' 
   },  
   { label: 'Support Channel', 
@@ -43,7 +43,8 @@ const AppHeader = () => {
             {(!['xsmall', 'small'].includes(size) ||
               (['xsmall', 'small'].includes(size) && !focused)) && (
               <Box wrap="false">
-                <Text color="text-strong" weight="bold">HPE Status Central</Text>
+                <Text color="text-strong" weight="bold">HPE</Text>
+                <Text color="text-strong">Status Central</Text>
               </Box>
             )}
           </Box>
