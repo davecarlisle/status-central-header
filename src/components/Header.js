@@ -36,7 +36,7 @@ const AppHeader = () => {
   return (
     <Header fill="horizontal" pad={{ horizontal: 'medium' }} background="background-front">
       <Tip content="Status Central home...">
-        <Button onClick={() => { goNav("https://hpetest01.statuspage.io/"); }}>
+        <Button onClick={() => { goNav("/"); }}>
           <Box direction="row" align="start" gap="medium" pad={{ vertical: 'small' }} responsive={false}>
             <Box height="24px" justify="center">
               <HpeIcon color="brand"/>
