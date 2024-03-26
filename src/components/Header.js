@@ -9,7 +9,7 @@ function goNav(url) {
 const items = [
   { label: 'Home', 
     onClick: () => { goNav('/') } ,
-    tooltip: 'Go to main status view...' 
+    tooltip: 'Status Central home...' 
   },
   { label: 'History', 
     onClick: () => { goNav('/history') } ,
