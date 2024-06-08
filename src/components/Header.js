@@ -21,7 +21,7 @@ const items = [
   },  
   { 
     icon: (<SlackIcon color="plain" size="large" />),
-    onClick: () => { goNav('https://hpe.enterprise.slack.com/archives/C06L2GA4NP8') } ,
+    onClick: () => { goNav('slack://channel?team=E01LD9FH0JZ&id=C077A03GF8C') } ,
     tooltip: 'Access global support Slack channel...' 
   },
 ];
